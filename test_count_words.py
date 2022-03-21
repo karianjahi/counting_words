@@ -5,6 +5,7 @@ We write all tests for count_words.py here
 # pylint: disable=R0903
 # pylint: disable=R0201
 
+import pytest
 from count_words import WordCounter
 
 class TestWordCounter:
@@ -65,3 +66,28 @@ class TestWordCounter:
         words = "<h1> Testing for html text </h1>"
         assert WordCounter(words).count_words() == 4
     
+    def test_html_text_without_attributes(self):
+        """
+        Test if we can count words in a html text 
+        that contains some attributes
+        """
+        words = '<h1 class="Mitun"> Testing for html text </h1>'
+        assert WordCounter(words).count_words() == 4
+    
+    def test_text_with_hyphens(self):
+        """
+        Test hyphens in between words
+        """
+        words = "test-hyphens-in-between-words"
+        assert WordCounter(words).count_words() == 5
+    
+    def test_wrong_data_type(self):
+        """
+        We want to test wrong data type
+        """
+        words = {"words": "My name is Joseph"}
+        with pytest.raises(Exception) as error:
+            WordCounter(words).count_words()
+        assert "word string must be of type string" in str(error.value)
+
+
