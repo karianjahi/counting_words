@@ -4,6 +4,8 @@ We want to write in a OOP style.
 """
 # pylint: disable=C0303
 # pylint: disable=R0903
+
+import re
 class WordCounter:
 
     """
@@ -23,9 +25,14 @@ class WordCounter:
         """
         This is the method that actually counts the words
         """
+        self.word_string = re.sub('[^A-Za-z0-9]+', ' ', self.word_string)
         word_splits = self.word_string.split()
         return len(word_splits)
 
 if __name__ == "__main__":
     SENTENCE = "Daniel wolf"
     print(WordCounter(SENTENCE).count_words())
+
+    MYSTRING = "$$^&@) I an in this bootcamp %*@$"
+    CLEANED = re.sub('[^A-Za-z0-9]+', ' ', MYSTRING)
+    print(CLEANED)
