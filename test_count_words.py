@@ -90,4 +90,6 @@ class TestWordCounter:
             WordCounter(words).count_words()
         assert "word string must be of type string" in str(error.value)
 
+# Test Parameterization: We want to run multiple tests at once:
+
 

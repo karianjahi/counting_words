@@ -17,7 +17,7 @@ class WordCounter:
 
     def __init__(self, word_string):
         """
-        Constructor class: we give a string
+        Constructor method: we give a string
         for the class to process
         """
         assert isinstance(word_string, str), "word string must be of type string"
