@@ -4,6 +4,8 @@ We write all tests for count_words.py here
 # pylint: disable=C0303
 # pylint: disable=R0903
 # pylint: disable=R0201
+# pylint: disable=E0401
+# pylint: disable=W0622
 
 import pytest
 from count_words import WordCounter
@@ -91,5 +93,22 @@ class TestWordCounter:
         assert "word string must be of type string" in str(error.value)
 
 # Test Parameterization: We want to run multiple tests at once:
+MY_TESTS = [
 
+    ("", 0),
+    ("mitun", 1),
+    ("Test if we can count multiple words", 7),
+    (" ", 0),
+    ("$$^&@) I an in this bootcamp %*@$", 5),
+    ("Test\nfor\nlinebreaks", 3),
+    ("<h1> Testing for html text </h1>", 4),
+    ('<h1 class="Mitun"> Testing for html text </h1>', 4),
+    ("test-hyphens-in-between-words", 5)
+]
 
+@pytest.mark.parametrize('input, output', MY_TESTS)
+def test_run_all_tests_at_once(input, output):
+    """
+    Test parameterization: Running multiple tests in one function
+    """
+    assert WordCounter(input).count_words() == output
