@@ -51,3 +51,17 @@ class TestWordCounter:
         words = "$$^&@) I an in this bootcamp %*@$"
         assert WordCounter(words).count_words() == 5
     
+    def test_linebreaks(self):
+        """
+        Test for linebreaks
+        """
+        words = "Test\nfor\nlinebreaks"
+        assert WordCounter(words).count_words() == 3
+    
+    def test_html_text(self):
+        """
+        Test if we can read html
+        """
+        words = "<h1> Testing for html text </h1>"
+        assert WordCounter(words).count_words() == 4
+    
