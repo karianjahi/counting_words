@@ -67,10 +67,17 @@ This is a smoke detector to our Application. It tells us when something goes wro
 5. The tests should pass and if they don't, notify the developer through email or a message.
 
 ### How do we implement Continuous Integration:
-1. Create a workflow: This involvs creates a .github/workflows folder. In the workflows folder we need a yml file that instructs the virtual machine on what to do once we push the code.
+1. create yaml file that instructs the virtual machine on what to do
+2. Create a workflow: This involvs creates a .github/workflows folder. In the workflows folder we need a yml file that instructs the virtual machine on what to do once we push the code.
+3. Requirements: Make sure you have requirements.txt in the main folder of your repo with all required libraries listed
+4. push
+  Commmit and push the changes.
+  Visit the Actions tab of your repository on GitHub
+  Watch it build
+4. add pylint and push again
 
 
-We can add a badge to our module that shows that everything is working properly. A green button [passing] is shown when 
+5. Add a badge to our module that shows that everything is working properly. A green button [passing] is shown when 
 the build is okay
 
 ![Python application](https://github.com/karianjahi/counting_words/workflows/Python%20application/badge.svg)
