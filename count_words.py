@@ -23,7 +23,7 @@ class WordCounter:
         assert isinstance(word_string, str), "word string must be of type string"
         self.word_string = word_string
     
-    def count_words_now(self):
+    def count_words(self):
         """
         This is the method that actually counts the words
         """
