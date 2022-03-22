@@ -71,3 +71,4 @@ This is a smoke detector to our Application. It tells us when something goes wro
 
 
 
+![Python application](https://github.com/karianjahi/counting_words/workflows/Python%20application/badge.svg)
