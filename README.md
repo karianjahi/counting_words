@@ -70,5 +70,7 @@ This is a smoke detector to our Application. It tells us when something goes wro
 1. Create a workflow: This involvs creates a .github/workflows folder. In the workflows folder we need a yml file that instructs the virtual machine on what to do once we push the code.
 
 
+We can add a badge to our module that shows that everything is working properly. A green button [passing] is shown when 
+the build is okay
 
 ![Python application](https://github.com/karianjahi/counting_words/workflows/Python%20application/badge.svg)
